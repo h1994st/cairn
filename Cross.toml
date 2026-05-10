@@ -1,0 +1,33 @@
+# Cross.toml — configuration for cross-rs/cross.
+#
+# `cross` builds in a container so the host (macOS) does not need a Linux
+# toolchain. Install with:
+#     cargo install cross --git https://github.com/cross-rs/cross
+# and have a container runtime running (Docker Desktop, Colima, OrbStack...).
+
+[build]
+default-target = "aarch64-unknown-linux-musl"
+
+[build.env]
+# Pass these through to the build container so logging behaviour is
+# consistent between host `cargo` and `cross`.
+passthrough = [
+    "RUST_LOG",
+    "RUST_BACKTRACE",
+]
+
+# Per-target image overrides. Uncomment and customise when a CVE needs a
+# specific glibc/kernel-header combination that the default cross image
+# does not provide.
+#
+# [target.x86_64-unknown-linux-gnu]
+# image = "ghcr.io/cross-rs/x86_64-unknown-linux-gnu:edge"
+#
+# [target.x86_64-unknown-linux-musl]
+# image = "ghcr.io/cross-rs/x86_64-unknown-linux-musl:edge"
+#
+# [target.aarch64-unknown-linux-gnu]
+# image = "ghcr.io/cross-rs/aarch64-unknown-linux-gnu:edge"
+#
+# [target.aarch64-unknown-linux-musl]
+# image = "ghcr.io/cross-rs/aarch64-unknown-linux-musl:edge"

@@ -1,0 +1,46 @@
+# Build output
+target/
+targets/
+
+# Per-crate runtime artifacts: created on demand by `just collect <cve>`.
+# The directory itself is not tracked.
+**/artifacts/
+
+# Homebrew lock
+.Brewfile.lock.json
+
+# macOS
+.DS_Store
+
+# Local environment
+.env
+.envrc
+
+# Claude Code — local-only settings, credentials, and per-user state.
+# Shared settings.json / commands/ / agents/ stay tracked.
+.claude/settings.local.json
+.claude/.credentials.json
+CLAUDE.local.md
+
+# Python — for ad-hoc scripts under scripts/ or anywhere else.
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+env/
+ENV/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.tox/
+.nox/
+.coverage
+.coverage.*
+htmlcov/
+.ipynb_checkpoints/
