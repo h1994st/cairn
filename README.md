@@ -30,7 +30,7 @@ This is a **personal learning repository**. The owner reproduces each CVE themse
 
 | CVE | Name | Category | Verified |
 |---|---|---|---|
-| [CVE-2026-31431](crates/cve-2026-31431) | Copy Fail | Linux kernel — local privilege escalation | aarch64 (Ubuntu 24.04, kernel 6.8) |
+| [CVE-2026-31431](crates/cve-2026-31431) | Copy Fail | Linux kernel — local privilege escalation | aarch64 (Ubuntu 24.04, kernel 6.8), x86_64 (Ubuntu 24.04, kernel 6.17) |
 
 ## Repository structure
 
