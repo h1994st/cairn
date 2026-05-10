@@ -26,6 +26,12 @@ A *cairn* is a stack of stones left by climbers and hikers to mark a route acros
 
 This is a **personal learning repository**. The owner reproduces each CVE themselves to understand it. Tooling and scaffolding are automated; the analysis is not.
 
+## Reproductions
+
+| CVE | Name | Category | Verified |
+|---|---|---|---|
+| [CVE-2026-31431](crates/cve-2026-31431) | Copy Fail | Linux kernel — local privilege escalation | aarch64 (Ubuntu 24.04, kernel 6.8) |
+
 ## Repository structure
 
 ```txt
@@ -72,7 +78,7 @@ For details on how CVE crates are organised and what goes where, see [`docs/meth
    just run cve-2026-31431   # cross-builds, scps to $VM_HOST, runs the exploit
    ```
 
-`cve-2026-31431` is a working local-privilege-escalation reproduction — running it modifies the page cache of `/usr/bin/su` on the target VM (effects revert on reboot or page eviction). See [`crates/cve-2026-31431/README.md`](crates/cve-2026-31431/README.md) for details on what it does. Crates produced by `just new …` ship only a banner; the reproduction itself is the owner's responsibility for each new CVE.
+`CVE-2026-31431` is a working local-privilege-escalation reproduction — running it modifies the page cache of `/usr/bin/su` on the target VM (effects revert on reboot or page eviction). See [`crates/cve-2026-31431/README.md`](crates/cve-2026-31431/README.md) for details on what it does. Crates produced by `just new …` ship only a banner; the reproduction itself is the owner's responsibility for each new CVE.
 
 ## Adding a new CVE
 
