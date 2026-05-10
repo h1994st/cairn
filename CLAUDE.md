@@ -58,7 +58,7 @@ When unsure, **ask before proceeding**, and lean toward doing less. It is always
 ## Style
 
 - Match existing code style in the repo. Run `just check` before declaring work done.
-- Keep commits focused. Use [Conventional Commits](https://www.conventionalcommits.org/) and put the CVE id in the scope when relevant: `feat(cve-2026-31431): scaffold crate`, `fix(cve-2026-31431): handle short read in splice loop`, `docs(cve-2026-31431): draft README`. Repo-wide changes use no scope (`chore: bump rust toolchain`, `docs: clarify methodology`).
+- Keep commits focused. Use [Conventional Commits](https://www.conventionalcommits.org/) and put the CVE id in the scope when relevant: `feat(CVE-2026-31431): scaffold crate`, `fix(CVE-2026-31431): handle short read in splice loop`, `docs(CVE-2026-31431): draft README`. Repo-wide changes use no scope (`chore: bump rust toolchain`, `docs: clarify methodology`). CVE ids stay uppercase (`CVE-YYYY-NNNNN`) everywhere they appear in commit messages, READMEs, and other prose — even though crate directories are lowercase (`crates/cve-YYYY-NNNNN/`). Subjects after the colon stay lowercase, imperative mood; bodies are one or two short sentences when present at all.
 - Prefer minimal scaffolding. If a recipe, file, or dependency isn't needed yet, don't add it speculatively.
 - Don't add CI, GitHub Actions, or release automation unless asked.
 
