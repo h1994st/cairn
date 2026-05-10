@@ -125,6 +125,13 @@ doctor:
 new cve:
     ./scripts/new-cve.sh {{cve}}
 
+# Show cross-build targets configured for the project.
+targets:
+    @echo "default-target: {{default-target}}"
+    @echo
+    @echo "available targets (rust-toolchain.toml):"
+    @awk '/^targets *= *\[/{flag=1; next} /^\]/{flag=0} flag {gsub(/[",]/, ""); gsub(/^[[:space:]]+/, ""); if ($0!="") print "  - " $0}' rust-toolchain.toml
+
 # Cross-build a single CVE crate (release profile).
 build cve target=default-target:
     cross build --release --package {{cve}} --target {{target}}
